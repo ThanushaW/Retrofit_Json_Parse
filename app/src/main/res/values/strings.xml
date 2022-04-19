@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Practice 1</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="button_fetch">Fetch</string>
+    <string name="previous">Previous</string>
+    <string name="simple">Simple SnackBar</string>
+    <string name="withAction">SnackBar with action</string>
+    <string name="custom">Custom SnackBar</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_fragement_first">COSC : Android Application Development Retrofit Json Parse</string>
+    <string name="enter_id">Enter user id</string>
+</resources>
