@@ -6,74 +6,146 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <TextView
-        android:id="@+id/textview_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textview_uname"/>
 
     <TextView
-        android:id="@+id/textview_uname"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_name"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/name"
+        app:layout_constraintEnd_toStartOf="@id/textview_name"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_label_uname"
+        />
+
+    <TextView
+        android:id="@+id/textview_name"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@id/textview_uname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_label_uname"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:text="@string/user_name"
+        app:layout_constraintEnd_toStartOf="@id/textview_uname"
+        app:layout_constraintTop_toBottomOf="@id/textview_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_label_email"
+        />
+    <TextView
+        android:id="@+id/textview_uname"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_uname"
         app:layout_constraintTop_toBottomOf="@id/textview_name"
         app:layout_constraintBottom_toTopOf="@id/textview_email"/>
 
     <TextView
-        android:id="@+id/textview_email"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_email"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:text="@string/email"
+        app:layout_constraintEnd_toStartOf="@id/textview_email"
+        app:layout_constraintTop_toBottomOf="@id/textview_label_uname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_label_address"
+        />
+    <TextView
+        android:id="@+id/textview_email"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toTopOf="@id/textview_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_email"
         app:layout_constraintTop_toBottomOf="@id/textview_uname" />
 
     <TextView
-        android:id="@+id/textview_address"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_address"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/address"
+        app:layout_constraintEnd_toStartOf="@id/textview_address"
+        app:layout_constraintTop_toBottomOf="@id/textview_label_email"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/textview_label_phone"
+        />
+    <TextView
+        android:id="@+id/textview_address"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_address"
         app:layout_constraintTop_toBottomOf="@id/textview_email"
         app:layout_constraintBottom_toTopOf="@id/textview_phone"/>
 
     <TextView
-        android:id="@+id/textview_phone"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_phone"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:text="@string/phone"
+        app:layout_constraintEnd_toStartOf="@id/textview_phone"
+        app:layout_constraintTop_toBottomOf="@id/textview_label_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_label_website"
+        />
+    <TextView
+        android:id="@+id/textview_phone"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toTopOf="@id/textview_website"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_phone"
         app:layout_constraintTop_toBottomOf="@id/textview_address" />
 
     <TextView
-        android:id="@+id/textview_website"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_website"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:text="@string/website"
+        app:layout_constraintEnd_toStartOf="@id/textview_website"
+        app:layout_constraintTop_toBottomOf="@id/textview_label_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_label_company"
+        />
+    <TextView
+        android:id="@+id/textview_website"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toTopOf="@id/textview_company"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_website"
         app:layout_constraintTop_toBottomOf="@id/textview_phone" />
 
     <TextView
-        android:id="@+id/textview_company"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_label_company"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
+        android:text="@string/company"
+        app:layout_constraintEnd_toStartOf="@id/textview_company"
+        app:layout_constraintTop_toBottomOf="@id/textview_label_website"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:id="@+id/textview_company"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_label_company"
         app:layout_constraintTop_toBottomOf="@id/textview_website" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
