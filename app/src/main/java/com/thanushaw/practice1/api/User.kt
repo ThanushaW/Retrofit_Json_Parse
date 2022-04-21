@@ -1,7 +1,7 @@
 package com.thanushaw.practice1.api
 
-import android.provider.ContactsContract
-
+//Creating Data Classes to receive values from JSON
+//Composite Data Class
 data class User(
     val id:Number,
     val username:String,

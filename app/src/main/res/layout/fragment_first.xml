@@ -9,6 +9,7 @@
     android:layout_marginBottom="100dp"
     tools:context=".FirstFragment">
 
+
    <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
        app:layout_constraintTop_toBottomOf="@id/textview_first"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintBottom_toTopOf="@id/button_first"/>
+       app:layout_constraintBottom_toTopOf="@id/button_first"
+       android:autofillHints="id no." />
 
     <TextView
         android:id="@+id/textview_first"

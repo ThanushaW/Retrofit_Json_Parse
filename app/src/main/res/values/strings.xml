@@ -22,5 +22,7 @@
     <string name="website">Website :</string>
     <string name="company">Company :</string>
 
+    <string name="errorMsg">Please Enter Valid Number (between 1 to 10)</string>
+    <string name="errorMsgConnection">"Data Retrieve failed ! Check Your Connection"</string>
 
 </resources>

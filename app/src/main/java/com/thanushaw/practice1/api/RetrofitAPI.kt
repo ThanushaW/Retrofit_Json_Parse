@@ -8,13 +8,14 @@ import retrofit2.http.Path
 
 
 interface RetrofitAPI {
-
+    //Creating retrofit api interface to create an instance whenever needed
+    //Since @GET Only Excepts Non-Dynamic Values letting getUser accept arguments
     @GET("users/{userId}")
     fun getUser(@Path("userId") userId:Int ) : Call<User>
 
     companion object {
 
-        var BASE_URL = "https://jsonplaceholder.typicode.com/"
+        private var BASE_URL = "https://jsonplaceholder.typicode.com/"
 
         fun create() : RetrofitAPI {
 
