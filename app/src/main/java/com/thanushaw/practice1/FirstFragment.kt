@@ -37,13 +37,10 @@ class FirstFragment : Fragment() {
 
         binding.buttonFirst.setOnClickListener {
             // Taking userID value from the user
-            val userID = binding.editText.text
+            val userID = binding.editText.text.toString().toInt()
 
-            if(userID.toString().toInt() in 1..10){
-                //Using FragmentManager setResult to parse values between fragments
-                setFragmentResult("requestKey", bundleOf("data" to userID))
-
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            if(userID in 1..10){
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundleOf("data" to userID))
             }
             else{
                 //Filter Answer

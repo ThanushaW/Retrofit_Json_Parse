@@ -40,47 +40,36 @@ class SecondFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Receiving User ID value from fragment manager using correct key
-        //Into a bundle
-        setFragmentResultListener("requestKey") { _, bundle ->
-            // Converting bundled value into a string
-            val userIdString  = bundle.keySet()
-                .joinToString { key ->
-                    "${bundle[key]}"
+        //get parsed argument
+        val userId = arguments?.getInt("data")
+        if(userId!=0) {
+            //Creating RetrofitAPI instance
+            val retrofitAPI = RetrofitAPI.create()
+            //Enqueuing getUser method
+            retrofitAPI.getUser(userId!!).enqueue( object : Callback<User> {
+                //If response successfully received
+                @SuppressLint("SetTextI18n")
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+                    val body = response.body()
+                    if (body != null) {
+                        //Binding each data into each textView
+                        binding.textviewName.text = body.name
+                        binding.textviewUname.text = body.username
+                        binding.textviewEmail.text = body.email
+                        binding.textviewAddress.text = body.address.suite+", "+body.address.street+", "+body.address.city+", "+body.address.zipcode+",\n latitude: "+body.address.geo.lat+", longitude: "+body.address.geo.lng
+                        binding.textviewPhone.text = body.phone
+                        binding.textviewWebsite.text = body.website
+                        binding.textviewCompany.text = body.company.name+"\n"+body.company.catchPhrase+"\n"+body.company.bs
+                    }
                 }
-            // Converting bundled value into int
-            val userId = userIdString.toInt()
-                //Creating RetrofitAPI instance
-                val retrofitAPI = RetrofitAPI.create()
-                //Enqueuing getUser method
-                retrofitAPI.getUser(userId).enqueue( object : Callback<User> {
-                    //If response successfully received
-                    @SuppressLint("SetTextI18n")
-                    override fun onResponse(call: Call<User>, response: Response<User>) {
-                        if (response.body() != null) {
-                            val body = response.body()
-                            if (body != null) {
-                                //Binding each data into each textView
-                                binding.textviewName.text = body.name
-                                binding.textviewUname.text = body.username
-                                binding.textviewEmail.text = body.email
-                                binding.textviewAddress.text = body.address.suite+", "+body.address.street+", "+body.address.city+", "+body.address.zipcode+",\n latitude: "+body.address.geo.lat+", longitude: "+body.address.geo.lng
-                                binding.textviewPhone.text = body.phone
-                                binding.textviewWebsite.text = body.website
-                                binding.textviewCompany.text = body.company.name+"\n"+body.company.catchPhrase+"\n"+body.company.bs
-                            }
-                        }
-                    }
-                    //if failed
-                    @SuppressLint("SetTextI18n")
-                    override fun onFailure(call: Call<User>, t: Throwable) {
+                //if failed
+                @SuppressLint("SetTextI18n")
+                override fun onFailure(call: Call<User>, t: Throwable) {
 
-                        Snackbar.make(view, R.string.errorMsgConnection, Snackbar.LENGTH_SHORT)
-                            .show()
-                    }
-                })
-
-
+                    Snackbar.make(view, R.string.errorMsgConnection, Snackbar.LENGTH_SHORT)
+                        .show()
+                }
+            })
         }
 
     }
